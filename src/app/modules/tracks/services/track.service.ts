@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { TrackModel } from '@core/models/tracks.model';
 import { rejects } from 'assert';
@@ -38,7 +38,9 @@ export class TrackService {
   }
 
   getAllTracks$(): Observable<any> {
-    return this.httpClient.get(`${this.URL}/tracks`).pipe(
+    return this.httpClient.get(`${this.URL}/tracks`, /* {
+      headers: new HttpHeaders ({ authorization: 'Bearer TOKEN' })
+    } */).pipe(
       map(({ data }: any) => {
         return data
       })
