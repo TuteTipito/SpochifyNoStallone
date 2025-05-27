@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { CookieService } from 'ngx-cookie-service';
 import { Observable, tap } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 
@@ -11,7 +10,7 @@ export class AuthService {
 
   private readonly URL = environment.api;
 
-  constructor(private httClient: HttpClient, private cookie:CookieService) { }
+  constructor(private httClient: HttpClient) { }
 
   sendCredential(email: string, password: string): Observable<any> {
     const body = {
@@ -26,5 +25,9 @@ export class AuthService {
         this.cookie.set('token_service', tokenSession, 4, '/')
       })
     ) */
+  }
+
+    suma(a: number, b: number): number {
+    return a + b
   }
 }

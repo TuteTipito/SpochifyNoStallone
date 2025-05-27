@@ -1,6 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { MediaPlayerComponent } from './media-player.component';
+import { HttpClientTestingModule } from '@angular/common/http/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
 describe('MediaPlayerComponent', () => {
   let component: MediaPlayerComponent;
@@ -8,6 +10,10 @@ describe('MediaPlayerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
+      imports: [
+        HttpClientTestingModule,
+        RouterTestingModule
+      ],
       declarations: [MediaPlayerComponent]
     })
     .compileComponents();
