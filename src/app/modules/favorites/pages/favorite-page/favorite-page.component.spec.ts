@@ -11,13 +11,13 @@ describe('FavoritePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
+    imports: [
         HttpClientTestingModule,
         RouterTestingModule,
-        SharedModule
-      ],
-      declarations: [FavoritePageComponent]
-    })
+        SharedModule,
+        FavoritePageComponent
+    ]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(FavoritePageComponent);

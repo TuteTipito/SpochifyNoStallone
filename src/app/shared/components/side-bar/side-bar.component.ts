@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 /* import { TrackService } from '@modules/tracks/services/track.service';*/
 import { Subscription } from 'rxjs';
+import { NgFor, NgClass } from '@angular/common';
 
 @Component({
-  selector: 'app-side-bar',
-  standalone: false,
-  templateUrl: './side-bar.component.html',
-  styleUrl: './side-bar.component.css'
+    selector: 'app-side-bar',
+    templateUrl: './side-bar.component.html',
+    styleUrl: './side-bar.component.css',
+    imports: [NgFor, RouterLink, NgClass]
 })
 export class SideBarComponent implements OnInit {
   

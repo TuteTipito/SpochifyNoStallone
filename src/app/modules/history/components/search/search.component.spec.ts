@@ -12,14 +12,14 @@ describe('SearchComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
+    imports: [
         HttpClientTestingModule,
         RouterTestingModule,
         SharedModule,
-        FormsModule
-      ],
-      declarations: [SearchComponent]
-    })
+        FormsModule,
+        SearchComponent
+    ]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(SearchComponent);

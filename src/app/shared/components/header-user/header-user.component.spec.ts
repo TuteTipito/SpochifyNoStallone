@@ -10,12 +10,12 @@ describe('HeaderUserComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
+    imports: [
         HttpClientTestingModule,
-        RouterTestingModule
-      ],
-      declarations: [HeaderUserComponent]
-    })
+        RouterTestingModule,
+        HeaderUserComponent
+    ]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(HeaderUserComponent);

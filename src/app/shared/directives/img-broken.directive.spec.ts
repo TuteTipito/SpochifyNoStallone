@@ -5,10 +5,7 @@ import { By } from '@angular/platform-browser';
 import { MOCK_TRACK } from '@shared/components/mock-track';
 
 //TODO: Componente de prueba
-@Component({
-  standalone: false,
-  template:'<img class="testing-directive" appImgBroken [src]="track.cover" >'
-})
+@Component({ template: '<img class="testing-directive" appImgBroken [src]="track.cover" >' })
 class TestComponent {
   public track = MOCK_TRACK;
 }
@@ -22,11 +19,9 @@ describe('ImgBrokenDirective', () => {
 
   beforeEach( () => {
     TestBed.configureTestingModule({
-      declarations: [
-        TestComponent,
-        ImgBrokenDirective
-      ]
-    })
+    imports: [TestComponent,
+        ImgBrokenDirective]
+})
 
     fixture = TestBed.createComponent(TestComponent)
     component = fixture.componentInstance

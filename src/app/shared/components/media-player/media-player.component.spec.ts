@@ -10,12 +10,12 @@ describe('MediaPlayerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
+    imports: [
         HttpClientTestingModule,
-        RouterTestingModule
-      ],
-      declarations: [MediaPlayerComponent]
-    })
+        RouterTestingModule,
+        MediaPlayerComponent
+    ]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(MediaPlayerComponent);

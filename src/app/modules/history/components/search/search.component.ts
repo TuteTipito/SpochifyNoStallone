@@ -1,10 +1,11 @@
 import { Component, Output, EventEmitter } from '@angular/core';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 @Component({
-  selector: 'app-search',
-  standalone: false,
-  templateUrl: './search.component.html',
-  styleUrl: './search.component.css'
+    selector: 'app-search',
+    templateUrl: './search.component.html',
+    styleUrl: './search.component.css',
+    imports: [ReactiveFormsModule, FormsModule]
 })
 export class SearchComponent {
 

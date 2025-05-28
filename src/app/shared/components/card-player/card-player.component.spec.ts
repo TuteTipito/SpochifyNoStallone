@@ -12,15 +12,13 @@ describe('CardPlayerComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
+    imports: [
         HttpClientTestingModule,
-        RouterTestingModule
-      ],
-      declarations: [
+        RouterTestingModule,
         CardPlayerComponent,
         ImgBrokenDirective
-      ]
-    })
+    ]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(CardPlayerComponent);

@@ -11,13 +11,13 @@ describe('TracksPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
+    imports: [
         HttpClientTestingModule,
         RouterTestingModule,
-        SharedModule
-      ],
-      declarations: [TracksPageComponent]
-    })
+        SharedModule,
+        TracksPageComponent
+    ]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(TracksPageComponent);

@@ -10,12 +10,12 @@ describe('SideBarComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
+    imports: [
         HttpClientTestingModule,
-        RouterTestingModule
-      ],
-      declarations: [SideBarComponent]
-    })
+        RouterTestingModule,
+        SideBarComponent
+    ]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(SideBarComponent);

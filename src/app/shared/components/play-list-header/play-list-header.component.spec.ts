@@ -10,12 +10,12 @@ describe('PlayListHeaderComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
+    imports: [
         HttpClientTestingModule,
-        RouterTestingModule
-      ],
-      declarations: [PlayListHeaderComponent]
-    })
+        RouterTestingModule,
+        PlayListHeaderComponent
+    ]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PlayListHeaderComponent);

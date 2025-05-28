@@ -10,12 +10,12 @@ describe('SectionGenericComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
+    imports: [
         HttpClientTestingModule,
-        RouterTestingModule
-      ],
-      declarations: [SectionGenericComponent]
-    })
+        RouterTestingModule,
+        SectionGenericComponent
+    ]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(SectionGenericComponent);

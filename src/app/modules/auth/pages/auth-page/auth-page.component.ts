@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormControl, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { AuthService } from '@modules/auth/services/auth.service';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
+import { NgIf } from '@angular/common';
 
 @Component({
-  selector: 'app-auth-page',
-  standalone: false,
-  templateUrl: './auth-page.component.html',
-  styleUrl: './auth-page.component.css'
+    selector: 'app-auth-page',
+    templateUrl: './auth-page.component.html',
+    styleUrl: './auth-page.component.css',
+    imports: [ReactiveFormsModule, NgIf]
 })
 export class AuthPageComponent implements OnInit {
   errorSession: boolean = false

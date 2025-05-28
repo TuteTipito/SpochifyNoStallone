@@ -11,15 +11,13 @@ describe('PlayListBodyComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
+    imports: [
         HttpClientTestingModule,
-        RouterTestingModule
-      ],
-      declarations: [
+        RouterTestingModule,
         PlayListBodyComponent,
         OrderListPipe
-      ]
-    })
+    ]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(PlayListBodyComponent);

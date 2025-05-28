@@ -1,9 +1,6 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 
-@Directive({
-  selector: '[appImgBroken]',
-  standalone: false
-})
+@Directive({ selector: '[appImgBroken]' })
 export class ImgBrokenDirective {
   @Input() customImg: string | boolean = false
   @HostListener('error') handleError():void {

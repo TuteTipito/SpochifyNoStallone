@@ -11,13 +11,13 @@ describe('HomePageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [
+    imports: [
         HttpClientTestingModule,
         RouterTestingModule,
-        SharedModule
-      ],
-      declarations: [HomePageComponent]
-    })
+        SharedModule,
+        HomePageComponent
+    ]
+})
     .compileComponents();
 
     fixture = TestBed.createComponent(HomePageComponent);
