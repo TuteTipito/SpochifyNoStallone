@@ -3,7 +3,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { FavoritePageComponent } from './favorite-page.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { SharedModule } from '@shared/shared.module';
 
 describe('FavoritePageComponent', () => {
   let component: FavoritePageComponent;
@@ -14,7 +13,6 @@ describe('FavoritePageComponent', () => {
     imports: [
         HttpClientTestingModule,
         RouterTestingModule,
-        SharedModule,
         FavoritePageComponent
     ]
 })

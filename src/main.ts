@@ -1,25 +1,17 @@
-import { platformBrowser, provideClientHydration, withEventReplay, BrowserModule, bootstrapApplication } from '@angular/platform-browser';
-
-import { provideHttpClient, withInterceptorsFromDi, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { CookieService } from 'ngx-cookie-service';
-import { InjectSessionInterceptor } from '@core/interceptors/inject-session.interceptor';
-import { provideRouter, RouterModule } from '@angular/router';
+import { provideClientHydration, withEventReplay, BrowserModule, bootstrapApplication } from '@angular/platform-browser';
+import { provideHttpClient, withInterceptors } from '@angular/common/http';
+import { authorizationInterceptor } from '@core/interceptors/inject-session.interceptor';
+import { provideRouter, RouterModule, withComponentInputBinding } from '@angular/router';
 import { AppComponent } from './app/app.component';
 import { importProvidersFrom } from '@angular/core';
 import { appRoutes } from './app/app.routes';
 
 bootstrapApplication(AppComponent, {
     providers: [
-        provideRouter(appRoutes),
+        provideRouter(appRoutes, withComponentInputBinding()),
         importProvidersFrom(BrowserModule, RouterModule),
         provideClientHydration(withEventReplay()),
-        provideHttpClient(withInterceptorsFromDi()),
-        CookieService,
-        {
-            provide: HTTP_INTERCEPTORS,
-            useClass: InjectSessionInterceptor,
-            multi: true
-        }
+        provideHttpClient(withInterceptors([authorizationInterceptor]))
     ]
 })
   .catch(err => console.error(err));

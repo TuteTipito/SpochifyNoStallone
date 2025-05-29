@@ -3,7 +3,6 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { SearchComponent } from './search.component';
 import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { SharedModule } from '@shared/shared.module';
 import { FormsModule } from '@angular/forms';
 
 describe('SearchComponent', () => {
@@ -15,7 +14,6 @@ describe('SearchComponent', () => {
     imports: [
         HttpClientTestingModule,
         RouterTestingModule,
-        SharedModule,
         FormsModule,
         SearchComponent
     ]

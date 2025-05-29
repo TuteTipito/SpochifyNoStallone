@@ -11,8 +11,8 @@ import { ImgBrokenDirective } from '../../directives/img-broken.directive';
     imports: [NgIf, NgClass, ImgBrokenDirective]
 })
 export class CardPlayerComponent {
-  @Input() mode: 'small' | 'big' = 'big'
-  @Input() track!: TrackModel
+  @Input({required:true}) mode: 'small' | 'big' = 'big'
+  @Input({required:true}) track!: TrackModel
 
   constructor(private multimediaService: MultimediaService) { }
 

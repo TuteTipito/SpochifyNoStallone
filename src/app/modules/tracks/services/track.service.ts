@@ -1,9 +1,11 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { TrackModel } from '@core/models/tracks.model';
 import { catchError, map, mergeMap, Observable, of, tap } from 'rxjs';
 import { environment } from 'src/environments/environment.development';
 /* import * as dataRaw from '../../../data/tracks.json' */
+
+const URL = environment.api;
 
 @Injectable({
   providedIn: 'root'
@@ -13,9 +15,7 @@ export class TrackService {
 /*   dataTracksTrending$:Observable<TrackModel[]> = of([])
   dataTracksRandom$:Observable<any> = of([]) */
 
-  private readonly URL = environment.api;
-
-  constructor(private httpClient: HttpClient) {
+/*   constructor(private httpClient: HttpClient) { */
     /*     const { data }: any = (dataRaw as any).default 
     this.dataTracksTrending$ = of(data)
 
@@ -32,12 +32,11 @@ export class TrackService {
         observer.next([trackExample])
       }, 3500)
     }) */
+/*   } */
+}
 
-
-  }
-
-  getAllTracks$(): Observable<any> {
-    return this.httpClient.get(`${this.URL}/tracks`, /* {
+  export const getAllTracks$ =  (): Observable<any> => {
+    return inject(HttpClient).get(`${URL}/tracks`, /* {
       headers: new HttpHeaders ({ authorization: 'Bearer TOKEN' })
     } */).pipe(
       map(({ data }: any) => {
@@ -46,9 +45,9 @@ export class TrackService {
     )
   }
 
-  getAllRandom$(): Observable<any> {
-    return this.httpClient.get(`${this.URL}/tracks`).pipe(
-      mergeMap(({ data }: any) => this.skipById(data, 1)),
+  export const getAllRandom$ = (): Observable<any> => {
+    return inject(HttpClient).get(`${URL}/tracks`).pipe(
+      mergeMap(({ data }: any) => skipById(data, 1)),
 /*       map((dataRevertida) => {
         return dataRevertida.filter((track: TrackModel) => track._id != 1)
       }) */
@@ -61,10 +60,9 @@ export class TrackService {
     )
   }
 
-  private skipById(listTracks: TrackModel[], id: number): Promise<TrackModel[]> {
+  export const skipById = (listTracks: TrackModel[], id: number): Promise<TrackModel[]> => {
     return new Promise((resolve, reject) => {
       const listTemp = listTracks.filter(a => a._id != id)
       resolve(listTemp)
     })
   }
-}
